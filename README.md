@@ -6,7 +6,7 @@ read** — primary artifacts, never regenerated. The platform's live data contin
 evolve; these files do not. Byte-exactness here is a *citation* property: a reader of the
 paper must be able to retrieve precisely what was analyzed.
 
-**DOI:** _to be minted by the Zenodo deposit (see DEPOSIT-STEPS.md; fill in here after)_
+**DOI:** [10.5281/zenodo.21461378](https://doi.org/10.5281/zenodo.21461378)
 **License (recommended):** CC BY 4.0 — standard for citable research data; Peter confirms
 at deposit time.
 
@@ -42,7 +42,7 @@ paper's manifest is **verified, not regenerated**, per the freeze rule.
 ## Citation
 
 > Lunous. *Housing Distress Index methodology paper v1 — data deposit.* Zenodo, 2026.
-> DOI: _(fill after mint)_. Primary artifact sha256 `f3b7525f…71bf7e`.
+> DOI: [10.5281/zenodo.21461378](https://doi.org/10.5281/zenodo.21461378). Primary artifact sha256 `f3b7525f…71bf7e`.
 
 ## Known divergence from the live platform
 
