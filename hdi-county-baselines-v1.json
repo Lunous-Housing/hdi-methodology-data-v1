@@ -1,0 +1,63 @@
+{
+  "schema_version": "v2",
+  "discovery_window": {
+    "year_min": 2010,
+    "year_max": 2019
+  },
+  "produced_at": "2026-06-11T01:25:12.577995Z",
+  "consumed_generation_ids": [
+    68,
+    69,
+    70,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138
+  ],
+  "baselines": [
+    {
+      "signal_id": "sig.cost_burden_rate.v1",
+      "column": "cost_burden_rate",
+      "transform": "identity",
+      "clip_low": 0.105263,
+      "clip_high": 0.571145,
+      "n_obs": 31287
+    },
+    {
+      "signal_id": "sig.price_to_income.v1",
+      "column": "price_to_income",
+      "transform": "identity",
+      "clip_low": 0.454887,
+      "clip_high": 6.779382,
+      "n_obs": 22744
+    },
+    {
+      "signal_id": "sig.rent_to_income_acs.v1",
+      "column": "rent_to_income_acs",
+      "transform": "identity",
+      "clip_low": 0.148725,
+      "clip_high": 0.470324,
+      "n_obs": 31274
+    },
+    {
+      "signal_id": "sig.rental_vacancy_rate.v1",
+      "column": "rental_vacancy_rate",
+      "transform": "negate",
+      "clip_low": -0.251081,
+      "clip_high": -0.0,
+      "n_obs": 31317
+    },
+    {
+      "signal_id": "sig.severe_cost_burden_rate.v1",
+      "column": "severe_cost_burden_rate",
+      "transform": "identity",
+      "clip_low": 0.026777,
+      "clip_high": 0.337734,
+      "n_obs": 31287
+    }
+  ],
+  "baselineId": "02c5b6491202fd01c3538144be2467e4ae8ceaef0cf57b9780e2737a32e9bb03"
+}

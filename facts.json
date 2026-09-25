@@ -1,0 +1,72 @@
+{
+  "hud_to_acs_ratio_2010_2024": {
+    "median": 1.225,
+    "n": 46983,
+    "p25": 1.1478,
+    "p75": 1.3077,
+    "share_above_1": 0.957729391482
+  },
+  "king_county_53033_2024": {
+    "acs_renter_median_income_b25119_003e": 85547,
+    "deposit_implied_rent_denominator": 85546.91892739212,
+    "deposit_price_to_income_raw": 5.9362,
+    "deposit_rent_to_income_raw": 0.293453,
+    "export_price_to_income_raw_value": 7.0143,
+    "export_rent_to_income_raw_value": 0.2012,
+    "geography_id": "53033",
+    "hud_area_median_income": 147400.0,
+    "median_gross_rent_monthly": 2092.0,
+    "median_household_income": 124746.0,
+    "median_sale_price": 875000.0,
+    "price_check_matches_deposit_price_to_income_raw_4dp": true,
+    "price_check_median_sale_price_over_hud_ami": 5.9362,
+    "year": 2024
+  },
+  "national_supporting_file": {
+    "clips": {
+      "cost_burdened_share": {
+        "clip_high": 0.571173702814,
+        "clip_low": 0.105263157895,
+        "label": "cost_burdened_share >=30% (Cost Burden)",
+        "max_abs_diff_from_paper_printed": 2.97186e-07,
+        "n": 31281
+      },
+      "price_to_income": {
+        "clip_high": 7.916302886604,
+        "clip_low": 0.572436682998,
+        "label": "price_to_income (Affordability)",
+        "max_abs_diff_from_paper_printed": 3.17002e-07,
+        "n": 22716
+      },
+      "rent_to_income": {
+        "clip_high": 0.470373070879,
+        "clip_low": 0.148877090909,
+        "label": "rent_to_income (Affordability)",
+        "max_abs_diff_from_paper_printed": 9.0909e-08,
+        "n": 31254
+      },
+      "rental_vacancy_rate": {
+        "clip_high": 0.0,
+        "clip_low": -0.249924109749,
+        "label": "rental_vacancy_rate (Availability)",
+        "max_abs_diff_from_paper_printed": 1.09749e-07,
+        "n": 31053
+      },
+      "severe_cost_burdened_share": {
+        "clip_high": null,
+        "clip_low": null,
+        "label": "severe_cost_burdened_share >=50% (Cost Burden, v2)",
+        "max_abs_diff_from_paper_printed": null,
+        "n": null,
+        "note": "sig_severe_cost_burden_rate_raw is not a column in the national supporting file; the severe-cost-burden signal postdates that discovery run (E-3)."
+      }
+    },
+    "king_county_53033_2024_price_to_income_raw": 7.014252962019,
+    "path": "docs/superpowers/evidence/2026-05-25-hdi-vnext-scores-national-v2-full.parquet",
+    "sha256": "ad25b89feedba90ec5655d48c1dbd6fce2f0c017376ea1b9493810d33b5e02d3"
+  },
+  "vacancy_raw_change_export_minus_deposit": {
+    "mean": -0.001072515599,
+    "n": 47021
+  }
+}

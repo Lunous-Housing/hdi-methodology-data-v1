@@ -39,11 +39,26 @@ pointers are to `docs/papers/hdi-methodology-v1/`.
     experiencing homelessness. 2021 unsheltered coverage is inconsistent per geography
     (COVID waiver) -- a trend caveat handled per geography-year.
 11. **Paper-vs-live divergence.** The live Hub keeps evolving with canonical
-    corrections (already 2,962 vs 2,967 complete counties two weeks post-build). The
-    severe+MAX confirmation bounds the variant gap at Spearman rho = 0.99. Cite the
-    frozen file when referencing the paper.
+    corrections (already 2,962 vs 2,967 complete counties two weeks post-build). Since
+    2026-09-24 it also uses different definitions: both Affordability ratios divide by
+    ACS all-household median income (this file used renter median income for rent and
+    HUD AMI for price), the rental vacancy rate follows the Census definition, and
+    scores are normalized against a new baseline. Live scores and this file's scores are
+    on different scales and cannot be compared value for value. Cite the frozen file when
+    referencing the paper.
 12. **Reproducibility posture.** These files are preserved as primary artifacts.
     Re-derivation from the documented public sources and operations is possible but
     will produce different bytes as upstream data and scope evolve (e.g., future
     admission of CT planning regions). The deposit exists so the cited result is
     always retrievable.
+13. **The paper's erratum (version 1.1).** Version 1.1 of the paper adds an erratum that
+    corrects its description of these files. The main corrections: the primary file's
+    `price_to_income` divides by HUD AMI, not household income; four of the five rows of
+    the §4.5 clip table come from the supporting national file and do not reproduce the
+    primary file's scores; and the vacancy rate omits "rented, not
+    occupied" units. The PDF of version 1.0 also misprints the SHA-256 values of these
+    files (its typesetting dropped digits from inline code); the values in README.md are
+    correct. Version 1.0's Appendix A lists the scores file as CC0; the deposit is CC BY 4.0 (erratum
+    item E-13). The erratum is the final section of the paper's version 1.1 and is also
+    published at https://ahihub.lunous.org/methodology/erratum. None of the corrections
+    changes a byte of the three parquet files.

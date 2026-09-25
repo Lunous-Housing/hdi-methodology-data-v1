@@ -1,0 +1,720 @@
+{
+  "runId": "20260924T182315Z-302195",
+  "generatedAt": "2026-09-24T18:48:44.510124+00:00",
+  "exportSchemaVersion": "2.0",
+  "license": "CC-BY-4.0",
+  "channel": {
+    "note": "Two parquet channels exist, with different jobs. This is the LIVING export: a generalized exploration dataset, refreshed in place and latest-only -- no historical versions, no DOI per refresh, no freshness SLA. It may be months stale while the Hub's publications take corrections; `generatedAt` and `sourceSnapshot` say exactly what it was built from. The FROZEN deposit is the other channel: the exact bytes the HDI methodology paper analyzed, HDI-scoped and never regenerated, cited by the DOI below. Use the living export to explore; cite the frozen deposit to reproduce the paper.",
+    "frozenDepositDoi": "10.5281/zenodo.21461378"
+  },
+  "sourceSnapshot": {
+    "takenAt": "2026-09-24T18:23:15.177510+00:00",
+    "families": [
+      {
+        "key": "population_landscape",
+        "serving": "legacy",
+        "blobCount": 47440,
+        "activeSlot": null,
+        "templates": [
+          "v1/{geography_id}/population-landscape-{year}.json"
+        ]
+      },
+      {
+        "key": "housing_landscape",
+        "serving": "legacy",
+        "blobCount": 31785,
+        "activeSlot": null,
+        "templates": [
+          "v2/{geography_id}/housing-landscape-{year}.json"
+        ]
+      },
+      {
+        "key": "housing_gap",
+        "serving": "legacy",
+        "blobCount": 31642,
+        "activeSlot": null,
+        "templates": [
+          "v1/{geography_id}/housing-gap-{year}.json"
+        ]
+      },
+      {
+        "key": "homelessness_landscape",
+        "serving": "slots",
+        "blobCount": 65549,
+        "activeSlot": "blue",
+        "manifestName": "slots/homelessness_landscape/blue/_manifests/000006-hl-20260924-054630.json",
+        "manifestEtag": "\"0x8DF1A00C069A5FF\""
+      },
+      {
+        "key": "composite_housing_gap",
+        "serving": "slots",
+        "blobCount": 22287,
+        "activeSlot": "blue",
+        "manifestName": "slots/composite_housing_gap/blue/_manifests/000003-chg-20260924-061741.json",
+        "manifestEtag": "\"0x8DF1A042C5C7263\""
+      },
+      {
+        "key": "distress_index",
+        "serving": "slots",
+        "blobCount": 47908,
+        "activeSlot": "blue",
+        "manifestName": "slots/distress_index/blue/_manifests/000034-di-20260924-061422.json",
+        "manifestEtag": "\"0x8DF1A031A591FA8\""
+      },
+      {
+        "key": "geography_profile",
+        "serving": "slots",
+        "blobCount": 3293,
+        "activeSlot": "green",
+        "manifestName": "slots/geography_profile/green/_manifests/000001-gp-20260924T082123.json",
+        "manifestEtag": "\"0x8DF1A15214B7C6A\""
+      }
+    ],
+    "geographies": {
+      "blob": "v1/reference/geographies.json",
+      "etag": "\"0x8DF1A0C9D84AFDC\"",
+      "sha256": "ff58b24d2328aac3f778c8e984b84e302505e2197f72bb3ac42142184b05895b"
+    },
+    "catalog": {
+      "blob": "v1/reference/metadata-catalog.json",
+      "etag": "\"0x8DED581D9E83EA0\"",
+      "snapshotHash": "35a0e3097e922c076af5897e072113b14d659222c61eeaa7c70af37763c6fb09"
+    }
+  },
+  "eligibilityReviewId": "public-export-eligibility-2026-09",
+  "excludedFields": [
+    {
+      "family": "housing_gap",
+      "table": "housing-gap-income-brackets",
+      "column": "label",
+      "servedLeaf": "rawData.incomeRawBrackets[].label",
+      "reason": "legacy-generation display text: served only by pre-SQL-migration renders, not emitted by the current publisher; bracket identity is fully carried by the floor/ceiling bracket axis"
+    }
+  ],
+  "sourceRestrictions": [
+    {
+      "source": "Redfin \u2014 County Market Data",
+      "restriction": "non-commercial",
+      "appliesTo": [
+        "hdi-scores-county.price_to_income_raw_value",
+        "hdi-scores-county.price_to_income_score",
+        "hdi-scores-county.median_sale_price",
+        "hdi-scores-state.price_to_income_raw_value",
+        "hdi-scores-state.price_to_income_score"
+      ],
+      "note": "The price_to_income signal, and the county median_sale_price input it is computed from, are derived in part from Redfin County Market Data, redistributed by Lunous subject to Redfin's non-commercial data sharing license. Downstream users must comply with the Redfin non-commercial restriction when using or distributing outputs that include the price_to_income signal or the median_sale_price input.",
+      "scopeNote": "This restriction attaches to the price_to_income signal columns listed in appliesTo. Dimension and composite scores (d1_score/d2_score/d3_score, composite_score, and their state aggregates) are Lunous-derived analytical composites -- multi-step, multi-source derivations from which the underlying Redfin series is not recoverable -- and are NOT subject to this restriction, per Lunous's published determination (HDI methodology paper deposit, Appendix A footnote 4)."
+    }
+  ],
+  "files": [
+    {
+      "name": "dictionary/population-landscape.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/population-landscape.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `population-landscape`.",
+      "rows": null,
+      "bytes": 2200814,
+      "sha256": "d368978079cb4504cc176f0733dc2e84406b25b0d1bda1c23583ec375110bcef",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/housing-landscape.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/housing-landscape.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `housing-landscape`.",
+      "rows": null,
+      "bytes": 7897967,
+      "sha256": "5d1372c473fc6ed30539d706b64e049e546edf5aa85df340ae2cde18e7efb18e",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/housing-cost-bands.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/housing-cost-bands.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `housing-cost-bands`.",
+      "rows": null,
+      "bytes": 7894116,
+      "sha256": "2a8185e39b505a91558e3abb27f24f6f0b316354826cb2d3e80b1c74fd4e1ae0",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/housing-cost-burden.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/housing-cost-burden.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `housing-cost-burden`.",
+      "rows": null,
+      "bytes": 7893562,
+      "sha256": "891854bbdb24e1b27b154c32f5aa1a4bc05c4caed083c243642b569adac739fe",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/housing-gap.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/housing-gap.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `housing-gap`.",
+      "rows": null,
+      "bytes": 2928123,
+      "sha256": "b1115b43b4c6f312db2d506907f058d1bffad39a483daf4e0aea160f4826cebf",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/housing-gap-ami-markers.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/housing-gap-ami-markers.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `housing-gap-ami-markers`.",
+      "rows": null,
+      "bytes": 2924287,
+      "sha256": "fee00ddef3452b054ae5e4e3d1799911b5dc9664fb58d731645230f2ade78de3",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/housing-gap-cost-bands.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/housing-gap-cost-bands.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `housing-gap-cost-bands`.",
+      "rows": null,
+      "bytes": 2924777,
+      "sha256": "06e15f5cf6a29d4e7e99de710afce6c774cd2786ea352a3353447d1bf37708ad",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/housing-gap-income-brackets.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/housing-gap-income-brackets.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `housing-gap-income-brackets`.",
+      "rows": null,
+      "bytes": 2924967,
+      "sha256": "32df0699df0ef400e3f62888c72808587457a7f89de470eab4455aaf27209f3e",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/homelessness-landscape.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/homelessness-landscape.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `homelessness-landscape`.",
+      "rows": null,
+      "bytes": 5129324,
+      "sha256": "af92158d8e4c499be8de45cf10fc5918597829533dc68fdd8ab153b8d51614d8",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/homelessness-year-annotations.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/homelessness-year-annotations.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `homelessness-year-annotations`.",
+      "rows": null,
+      "bytes": 5035148,
+      "sha256": "ca7bd903a51c8b8e6984ab915d6e7145460698e2b66df0a62646376914c3919b",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/composite-housing-gap.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/composite-housing-gap.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `composite-housing-gap`.",
+      "rows": null,
+      "bytes": 5142762,
+      "sha256": "7b5eb72cc745343b349a79620d48ce0e5d0af680600a7992c1149c53c284f509",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/hdi-scores-county.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/hdi-scores-county.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `hdi-scores-county`.",
+      "rows": null,
+      "bytes": 43620,
+      "sha256": "1a087f1f3c40397715be471edfc2dfef02f06b7c875a45a1653e5809823f2ed9",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/hdi-scores-state.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/hdi-scores-state.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `hdi-scores-state`.",
+      "rows": null,
+      "bytes": 51798,
+      "sha256": "0028a727cc42944d35a01337eb2961a3f336f542b448442e33def057cd2baa63",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/hdi-limitations.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/hdi-limitations.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `hdi-limitations`.",
+      "rows": null,
+      "bytes": 17843,
+      "sha256": "da103ab6edc3f840c14537295c05e665bd04d0b5908a6c31d3e843ff873df3bd",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/geography-profile.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/geography-profile.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `geography-profile`.",
+      "rows": null,
+      "bytes": 20806,
+      "sha256": "98412e3173d25cbd652475d5dbb37a4f2e3f5d2c4e558f6af6773d950105c5fe",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/geography-profile-series.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/geography-profile-series.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `geography-profile-series`.",
+      "rows": null,
+      "bytes": 23170,
+      "sha256": "64bfa9b12154c3c27547f325f02a8cb510854160d4c49641bb577a11fa99a12f",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/geographies.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/geographies.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `geographies`.",
+      "rows": null,
+      "bytes": 8119,
+      "sha256": "50b3d15aaf433253544244a7aa643d0e32a3c9b7a7b07748760441d5e80b711c",
+      "yearsCovered": null
+    },
+    {
+      "name": "dictionary/coverage.json",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/dictionary/coverage.json",
+      "contentType": "application/json",
+      "description": "Machine-readable data dictionary for `coverage`.",
+      "rows": null,
+      "bytes": 3223,
+      "sha256": "6ab9a9ed0d00fedc16321463d4d680fef9be91958d5102ed3238d6c5f31f240e",
+      "yearsCovered": null
+    },
+    {
+      "name": "DICTIONARY.md",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/DICTIONARY.md",
+      "contentType": "text/markdown; charset=utf-8",
+      "description": "Human-readable data dictionary for every exported table.",
+      "rows": null,
+      "bytes": 39153518,
+      "sha256": "ab46398e7381b6390c0ea2ce3888b6e8d38b3aa7eb0789f39fa8bb3a94ff7a2f",
+      "yearsCovered": null
+    },
+    {
+      "name": "LICENSE.md",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/LICENSE.md",
+      "contentType": "text/markdown; charset=utf-8",
+      "description": "The licence this compilation is offered under, and the attribution it asks for.",
+      "rows": null,
+      "bytes": 1400,
+      "sha256": "7c5a02539130d08c7ecd3a9cd82f1d3792c82ff201ece24bbca614549a9291f4",
+      "yearsCovered": null
+    },
+    {
+      "name": "NOTICE.md",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/NOTICE.md",
+      "contentType": "text/markdown; charset=utf-8",
+      "description": "Which parquet channel this is, the frozen deposit's DOI, and the reviewed source attribution.",
+      "rows": null,
+      "bytes": 8243,
+      "sha256": "6fa82f5c517c88e40340fc939819b7a13e59308cdc31240d897a79e92895a2c6",
+      "yearsCovered": null
+    },
+    {
+      "name": "population-landscape.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/population-landscape.parquet",
+      "contentType": "application/octet-stream",
+      "description": "Household counts broken out by AMI band. Some columns (total households, AMI provenance, rollup fields) repeatedly appear on every band row for a given geography and year, so they are not summable across rows.",
+      "rows": 379520,
+      "bytes": 12024539,
+      "sha256": "7ea4a6d64a88b092c99170ff8636c54eb10f63b6b4480011933f3b732c22370a",
+      "yearsCovered": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "housing-landscape.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/housing-landscape.parquet",
+      "contentType": "application/octet-stream",
+      "description": "Housing supply by AMI affordability band, broken out by tenure (combined, renter, owner). Each tenure slice is its own set of rows.",
+      "rows": 762840,
+      "bytes": 11143052,
+      "sha256": "060db4dbb8176dc7cf10a91edc5c61cc96fcda07176397811bd127b3657ab979",
+      "yearsCovered": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "housing-cost-bands.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/housing-cost-bands.parquet",
+      "contentType": "application/octet-stream",
+      "description": "The ACS cost-bracket distribution by tenure slice. This is a direct representation of the ACS cost brackets, prior to translation into AMI bands.",
+      "rows": 953550,
+      "bytes": 8622080,
+      "sha256": "f02b6dcde57fb229b6a1078f61ec863e0506d35bcdf4d4a62d7a7fe3e7c3bd9b",
+      "yearsCovered": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "housing-cost-burden.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/housing-cost-burden.parquet",
+      "contentType": "application/octet-stream",
+      "description": "Cost-burden distribution for the renter and owner tenure slices. Where the ACS suppresses the data, the rows are absent.",
+      "rows": 381420,
+      "bytes": 4910869,
+      "sha256": "0c15bb59faa0ab7482ad13252be289e355a8c8cca28384ed6b1a8ca9e3fe60d0",
+      "yearsCovered": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "housing-gap.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/housing-gap.parquet",
+      "contentType": "application/octet-stream",
+      "description": "The renter housing gap, organized by monthly rent-budget brackets.",
+      "rows": 332090,
+      "bytes": 8190163,
+      "sha256": "c6f60748621214b6eadbfeea04a318aa25ccbe4d2bda79040fc47e3e88e13c07",
+      "yearsCovered": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "housing-gap-ami-markers.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/housing-gap-ami-markers.parquet",
+      "contentType": "application/octet-stream",
+      "description": "AMI-threshold markers for the housing gap.",
+      "rows": 221494,
+      "bytes": 5961694,
+      "sha256": "4113a7b188df9c88a899abbb530519e7c627bdc9ae320fea2f68530a68499b2d",
+      "yearsCovered": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "housing-gap-cost-bands.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/housing-gap-cost-bands.parquet",
+      "contentType": "application/octet-stream",
+      "description": "The ACS gross-rent cost brackets that underlie the housing gap.",
+      "rows": 316420,
+      "bytes": 5756808,
+      "sha256": "29803cbaaf560507f2dc8dc592a46f48a4205f1cf846d0d03b5f8e88f4ebbb9c",
+      "yearsCovered": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "housing-gap-income-brackets.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/housing-gap-income-brackets.parquet",
+      "contentType": "application/octet-stream",
+      "description": "The ACS renter income brackets that underlie the housing gap.",
+      "rows": 332090,
+      "bytes": 5936440,
+      "sha256": "93c674c4698d54de1d6a4eac0bb174c8925628fb3896fb2c238bd6f031046fe4",
+      "yearsCovered": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "homelessness-landscape.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/homelessness-landscape.parquet",
+      "contentType": "application/octet-stream",
+      "description": "Point-in-Time homelessness measures with per-measure detail. Each measure carries its own source, quality rating, count type, and absence reason.",
+      "rows": 62255,
+      "bytes": 6773085,
+      "sha256": "a30be1bf14b1bf119a69e6a550297a042f93fc649b78966af2fd671c904cefce",
+      "yearsCovered": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "homelessness-year-annotations.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/homelessness-year-annotations.parquet",
+      "contentType": "application/octet-stream",
+      "description": "Per-geography-year homelessness annotations, one row per annotation. A geography-year that has no annotations has no rows in this table.",
+      "rows": 24633,
+      "bytes": 2434854,
+      "sha256": "8189a8dfc1906abfb5ccbdcd2a78493c65817f0111092546e56c8ff0d4dfc7f6",
+      "yearsCovered": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2021
+      ]
+    },
+    {
+      "name": "composite-housing-gap.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/composite-housing-gap.parquet",
+      "contentType": "application/octet-stream",
+      "description": "The composite housing gap by AMI band, including PIT linkage and provenance fields. Year-level composite totals repeat on every band row.",
+      "rows": 178296,
+      "bytes": 7136712,
+      "sha256": "f18012f7470e3c9bef32b1550c11db807e83e817c7d78cfec7dc4c078cf5a766",
+      "yearsCovered": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "hdi-scores-county.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/hdi-scores-county.parquet",
+      "contentType": "application/octet-stream",
+      "description": "Housing Distress Index v2 county scores, including composite and dimension scores, the underlying signals, and the completeness classification.",
+      "rows": 47142,
+      "bytes": 7648056,
+      "sha256": "ea8881c1a1c427966dda0132b3c59037ec426c77b05be68b4bcf9f74090d84dd",
+      "yearsCovered": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "hdi-scores-state.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/hdi-scores-state.parquet",
+      "contentType": "application/octet-stream",
+      "description": "Housing Distress Index v2 state scores. Same dimensions and signals as the county table, with additional provenance for the state-level aggregation.",
+      "rows": 765,
+      "bytes": 124548,
+      "sha256": "45b4d066cf3aa7081ccf2aabe22d8c18f315c792c0788f6bb4f8ad1f19a1a834",
+      "yearsCovered": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "hdi-limitations.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/hdi-limitations.parquet",
+      "contentType": "application/octet-stream",
+      "description": "The known limitations behind Housing Distress Index county and state scores: suppressed inputs, substituted inputs and coverage gaps. One row for each limitation and each signal it affects.",
+      "rows": 10235,
+      "bytes": 1041023,
+      "sha256": "5b3d4d824271b630a7f03bca4a18529966a15bf93926c84739f3af1a1b2858e4",
+      "yearsCovered": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "geography-profile.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/geography-profile.parquet",
+      "contentType": "application/octet-stream",
+      "description": "One row per county or state: its registry validity window, land and water area with the Census Gazetteer vintage they came from, and its USDA Rural-Urban Continuum Code with the edition it came from. An absent value carries its reason.",
+      "rows": 3293,
+      "bytes": 412579,
+      "sha256": "e8e98821330d15a923a322013102acbc1825abd7f9c2cee8840ac0f0276360ba",
+      "yearsCovered": null
+    },
+    {
+      "name": "geography-profile-series.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/geography-profile-series.parquet",
+      "contentType": "application/octet-stream",
+      "description": "One row per county or state and year: resident population and its density, ACS median household income, HUD Area Median Income and the ratio between the two. An absent value carries its reason.",
+      "rows": 62255,
+      "bytes": 1608995,
+      "sha256": "5ad2eeae14f50f651b11232d3b94be2713bb958e0e014601a87f4f932d7c60c4",
+      "yearsCovered": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "geographies.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/geographies.parquet",
+      "contentType": "application/octet-stream",
+      "description": "The geography registry that all exported IDs resolve against: IDs, names, types, and vintages.",
+      "rows": 3293,
+      "bytes": 56549,
+      "sha256": "ba6a438cefd3cab8e54961e098b04c3a4bd52a074cab1324e5948b4b11078938",
+      "yearsCovered": null
+    },
+    {
+      "name": "coverage.parquet",
+      "url": "https://ahihubpublic.blob.core.windows.net/data/coverage.parquet",
+      "contentType": "application/octet-stream",
+      "description": "One row for each geography-year-family combination in the export. If a row is missing from one of the data tables, this table tells you whether the Hub has not published that data yet or whether it was published with no value available.",
+      "rows": 243316,
+      "bytes": 89995,
+      "sha256": "92d5ca556bc2e145132f6ec6bae29373bd2f6d5be0ec748a2b6046d7b5095239",
+      "yearsCovered": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    }
+  ]
+}

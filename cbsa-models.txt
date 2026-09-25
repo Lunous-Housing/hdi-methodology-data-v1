@@ -1,0 +1,52 @@
+AHIH-507 -- CBSA metro-regression reproduction (E-5, E-6, E-9)
+========================================================================
+
+F0 -- published 3-signal model
+  n=12677  R2=0.1164  years 2010-2024
+  sample: Alaska, Hawaii and university counties excluded (cross_sectional_levels._exclusions); pit_rate > 0; rent_to_income_acs, cost_burden_rate, rental_vacancy_rate (negated) finite
+    rent_to_income_acs       full=0.1449  semi=0.1066  t=13.58
+    cost_burden_rate         full=0.2297  semi=0.1690  t=21.77
+    rental_vacancy_rate      full=0.0847  semi=0.0624  t=10.00
+
+F0b -- recorded 4-signal model
+  sample: No Alaska/Hawaii or university exclusion; pit_rate > 0; rent_to_income_acs, cost_burden_rate, price_to_income (median_sale_price / total_median_income), rental_vacancy_rate (negated) all finite
+  three-signal (same sample)
+  n=10827  R2=0.1299  years 2012-2024
+    rent_to_income_acs       full=0.1650  semi=0.1221  t=14.27
+    cost_burden_rate         full=0.2306  semi=0.1707  t=20.18
+    rental_vacancy_rate      full=0.0961  semi=0.0711  t=10.54
+
+  four-signal
+  n=10827  R2=0.1671  years 2012-2024
+    rent_to_income_acs       full=0.0922  semi=0.0683  t=7.82
+    cost_burden_rate         full=0.2225  semi=0.1647  t=19.90
+    price_to_income          full=0.2078  semi=0.1538  t=21.99
+    rental_vacancy_rate      full=0.0808  semi=0.0598  t=9.03
+
+F1 -- both models on one sample
+  sample: Alaska, Hawaii and university counties excluded; pit_rate > 0; rent_to_income_acs, cost_burden_rate, price_to_income, rental_vacancy_rate (negated) all finite
+  three-signal (same sample)
+  n=10739  R2=0.1288  years 2012-2024
+    rent_to_income_acs       full=0.1531  semi=0.1120  t=13.20
+    cost_burden_rate         full=0.2357  semi=0.1724  t=20.54
+    rental_vacancy_rate      full=0.1111  semi=0.0813  t=12.16
+
+  four-signal
+  n=10739  R2=0.1619  years 2012-2024
+    rent_to_income_acs       full=0.0863  semi=0.0631  t=7.29
+    cost_burden_rate         full=0.2275  semi=0.1664  t=20.21
+    price_to_income          full=0.1954  semi=0.1429  t=20.57
+    rental_vacancy_rate      full=0.0940  semi=0.0688  t=10.44
+
+F2 -- F1's 4-signal fit minus partial coverage (330 excluded)
+  n=10409  R2=0.1676  years 2012-2024
+  sample: F1's sample, excluding CBSA-years with partial Redfin/ACS-income coverage (0 < n_price < n_income)
+    rent_to_income_acs       full=0.0959  semi=0.0706  t=8.00
+    cost_burden_rate         full=0.2279  semi=0.1678  t=20.02
+    price_to_income          full=0.1942  semi=0.1430  t=20.14
+    rental_vacancy_rate      full=0.0959  semi=0.0706  t=10.52
+
+Facts
+  rent_to_income_acs (n=13769): share == 12*rent/total_income 1.000000, share == 12*rent/renter_income 0.000000
+  Redfin coverage: 345 of 11583 CBSA-years with any Redfin data are partial (median covered pop share 0.7769)
+

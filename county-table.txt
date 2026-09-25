@@ -1,0 +1,25 @@
+County table (Table 6.2 recomputation) -- export run 20260924T182315Z-302195
+
+deposit complete county-years, 2022-2024:     8873
+common universe (columns B and C):            8847
+export-own universe (C, secondary line):      8917
+
+Level      Measure                                             A       B       C   n(B/C)    C-own   n(own)
+-----------------------------------------------------------------------------------------------------------
+signal     price_to_income (Affordability)                 0.116  0.1484  0.1566     8847   0.1545     8917
+signal     rent_to_income (Affordability)                  0.014  0.0165  0.0772     8847   0.0756     8917
+signal     cost_burdened_share >=30% (Cost Burden)         0.033  0.0433  0.0433     8847   0.0426     8917
+signal     severe_cost_burdened_share >=50% (Cost Burden, v2)   0.030  0.0385  0.0385     8847   0.0379     8917
+signal     rental_vacancy_rate (Availability)              0.001  0.0038  0.0038     8847   0.0038     8917
+dimension  Affordability (equal avg of two signals)        0.090  0.1141  0.1517     8847   0.1491     8917
+dimension  Cost Burden (severe+MAX)                        0.032  0.0418  0.0418     8847   0.0411     8917
+dimension  Availability (sole signal)                      0.001  0.0038  0.0038     8847   0.0038     8917
+composite  equal-thirds                                    0.054  0.0774  0.1013     8847   0.1001     8917
+
+Spearman rho, composite B (deposit) vs pit_rate: 0.2485  n=8847
+Spearman rho, composite C (export)  vs pit_rate: 0.2747  n=8847
+
+Column A: v1.0 as printed (P06:224-234), n=8851 (June 2026 SQL outcome series, not public -- E-10).
+Column B: deposit score vs export 2.0 pit_rate, common universe.
+Column C: export 2.0 score vs export 2.0 pit_rate, common universe.
+C-own: column C on the export's own analogue of 'complete' (all five signal scores present), not the common universe.

@@ -1,0 +1,189 @@
+{
+  "facts": {
+    "redfin_coverage": {
+      "cbsa_years_with_any_redfin": 11583,
+      "median_pop_share_price_among_partial": 0.776878073642,
+      "partial_count": 345
+    },
+    "rent_to_income_acs_construction": {
+      "n": 13769,
+      "share_equal_12x_rent_over_renter_income": 0.0,
+      "share_equal_12x_rent_over_total_income": 1.0
+    }
+  },
+  "fits": {
+    "F0": {
+      "description": "published 3-signal model, as cross_sectional_levels.py fits it",
+      "exclusion_rule": "Alaska, Hawaii and university counties excluded (cross_sectional_levels._exclusions); pit_rate > 0; rent_to_income_acs, cost_burden_rate, rental_vacancy_rate (negated) finite",
+      "n": 12677,
+      "predictors": {
+        "cost_burden_rate": {
+          "full_std_beta": 0.229686581233,
+          "semi_std_beta": 0.169049684796,
+          "t": 21.774871994726
+        },
+        "rent_to_income_acs": {
+          "full_std_beta": 0.144856055505,
+          "semi_std_beta": 0.106614284528,
+          "t": 13.582013477919
+        },
+        "rental_vacancy_rate": {
+          "full_std_beta": 0.084745876138,
+          "semi_std_beta": 0.062373098037,
+          "t": 10.004047901337
+        }
+      },
+      "r2": 0.116353497977,
+      "year_max": 2024,
+      "year_min": 2010
+    },
+    "F0b": {
+      "description": "recorded 4-signal model (construct audit 2026-06-07), no exclusions",
+      "exclusion_rule": "No Alaska/Hawaii or university exclusion; pit_rate > 0; rent_to_income_acs, cost_burden_rate, price_to_income (median_sale_price / total_median_income), rental_vacancy_rate (negated) all finite",
+      "four_signal": {
+        "n": 10827,
+        "predictors": {
+          "cost_burden_rate": {
+            "full_std_beta": 0.222539256766,
+            "semi_std_beta": 0.164715248916,
+            "t": 19.895600778758
+          },
+          "price_to_income": {
+            "full_std_beta": 0.207819363811,
+            "semi_std_beta": 0.153820133747,
+            "t": 21.994915419371
+          },
+          "rent_to_income_acs": {
+            "full_std_beta": 0.092217951353,
+            "semi_std_beta": 0.068256284452,
+            "t": 7.821365215151
+          },
+          "rental_vacancy_rate": {
+            "full_std_beta": 0.080759332893,
+            "semi_std_beta": 0.059775042898,
+            "t": 9.032003751042
+          }
+        },
+        "r2": 0.167086222951,
+        "year_max": 2024,
+        "year_min": 2012
+      },
+      "three_signal": {
+        "n": 10827,
+        "predictors": {
+          "cost_burden_rate": {
+            "full_std_beta": 0.230575563267,
+            "semi_std_beta": 0.170663422937,
+            "t": 20.179906994484
+          },
+          "rent_to_income_acs": {
+            "full_std_beta": 0.165013645018,
+            "semi_std_beta": 0.122136938933,
+            "t": 14.266996149666
+          },
+          "rental_vacancy_rate": {
+            "full_std_beta": 0.096054963839,
+            "semi_std_beta": 0.071096297832,
+            "t": 10.542711314028
+          }
+        },
+        "r2": 0.129852444642,
+        "year_max": 2024,
+        "year_min": 2012
+      }
+    },
+    "F1": {
+      "description": "3-signal and 4-signal models on one sample",
+      "exclusion_rule": "Alaska, Hawaii and university counties excluded; pit_rate > 0; rent_to_income_acs, cost_burden_rate, price_to_income, rental_vacancy_rate (negated) all finite",
+      "four_signal": {
+        "n": 10739,
+        "predictors": {
+          "cost_burden_rate": {
+            "full_std_beta": 0.227523700591,
+            "semi_std_beta": 0.166424867637,
+            "t": 20.207491376462
+          },
+          "price_to_income": {
+            "full_std_beta": 0.19540134628,
+            "semi_std_beta": 0.142928596477,
+            "t": 20.571899576121
+          },
+          "rent_to_income_acs": {
+            "full_std_beta": 0.08626717872,
+            "semi_std_beta": 0.063101135234,
+            "t": 7.290959172186
+          },
+          "rental_vacancy_rate": {
+            "full_std_beta": 0.094027918307,
+            "semi_std_beta": 0.068777818828,
+            "t": 10.442450105208
+          }
+        },
+        "r2": 0.161864004432,
+        "year_max": 2024,
+        "year_min": 2012
+      },
+      "three_signal": {
+        "n": 10739,
+        "predictors": {
+          "cost_burden_rate": {
+            "full_std_beta": 0.235659583038,
+            "semi_std_beta": 0.172375953857,
+            "t": 20.542925636647
+          },
+          "rent_to_income_acs": {
+            "full_std_beta": 0.153084374134,
+            "semi_std_beta": 0.111975353057,
+            "t": 13.197920959196
+          },
+          "rental_vacancy_rate": {
+            "full_std_beta": 0.111145397718,
+            "semi_std_beta": 0.081298599027,
+            "t": 12.159694797869
+          }
+        },
+        "r2": 0.128819313594,
+        "year_max": 2024,
+        "year_min": 2012
+      }
+    },
+    "F2": {
+      "description": "F1's 4-signal fit without partial-coverage CBSA-years",
+      "exclusion_rule": "F1's sample, excluding CBSA-years with partial Redfin/ACS-income coverage (0 < n_price < n_income)",
+      "n": 10409,
+      "partial_excluded_from_f1_sample": 330,
+      "predictors": {
+        "cost_burden_rate": {
+          "full_std_beta": 0.227930889162,
+          "semi_std_beta": 0.167824454506,
+          "t": 20.020361216103
+        },
+        "price_to_income": {
+          "full_std_beta": 0.194210976602,
+          "semi_std_beta": 0.142996639583,
+          "t": 20.144593807773
+        },
+        "rent_to_income_acs": {
+          "full_std_beta": 0.095917162042,
+          "semi_std_beta": 0.070623360689,
+          "t": 8.00022150167
+        },
+        "rental_vacancy_rate": {
+          "full_std_beta": 0.095918900613,
+          "semi_std_beta": 0.070624640791,
+          "t": 10.524863840383
+        }
+      },
+      "r2": 0.167622344791,
+      "year_max": 2024,
+      "year_min": 2012
+    }
+  },
+  "meta": {
+    "cbsa_panel_sha256": "9bf67fa7430a6e5f7e267e98c4c088204e7e6bace840c7fc7528605bd461aad8",
+    "county_panel_sha256": "3941970c0a5eab92f52f6b38c41096b04627750ea530fe53af594e14ebd02c2a",
+    "crosswalk_sha256_lf": "f60187a7c891d20f1a65dbb7b564f23bfb23c9c9cec58dc6a8d88c6632d14481",
+    "extract_sha256": "bb5e6904c109d341b5402fd4e4e2c3a50911b05a821f4f32be769d2f77f3594a",
+    "source": "scripts/analysis/hdi_erratum_cbsa_models.py"
+  }
+}

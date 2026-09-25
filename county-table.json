@@ -1,0 +1,153 @@
+{
+  "column_a_v1_printed": {
+    "affordability_dim": {
+      "printed": "0.090",
+      "txt": 0.0901
+    },
+    "availability_dim": {
+      "printed": "0.001",
+      "txt": 0.0008
+    },
+    "composite": {
+      "printed": "0.054",
+      "txt": 0.0542
+    },
+    "cost_burden_dim": {
+      "printed": "0.032",
+      "txt": 0.0317
+    },
+    "cost_burdened_share": {
+      "printed": "0.033",
+      "txt": 0.0333
+    },
+    "n": 8851,
+    "price_to_income": {
+      "printed": "0.116",
+      "txt": 0.1157
+    },
+    "rent_to_income": {
+      "printed": "0.014",
+      "txt": 0.0136
+    },
+    "rental_vacancy_rate": {
+      "printed": "0.001",
+      "txt": 0.0008
+    },
+    "severe_cost_burdened_share": {
+      "printed": "0.030",
+      "txt": 0.0295
+    }
+  },
+  "common_universe_n": 8847,
+  "deposit_complete_holdout_n": 8873,
+  "deposit_sha256": "f3b7525f7e7c44e50bcaf0fe552bdfba1b2c1ed35670ce36305694e3eb71bf7e",
+  "export_hashes": {
+    "geography-profile-series.parquet": "5ad2eeae14f50f651b11232d3b94be2713bb958e0e014601a87f4f932d7c60c4",
+    "hdi-scores-county.parquet": "ea8881c1a1c427966dda0132b3c59037ec426c77b05be68b4bcf9f74090d84dd",
+    "homelessness-landscape.parquet": "a30be1bf14b1bf119a69e6a550297a042f93fc649b78966af2fd671c904cefce"
+  },
+  "export_own_universe_n": 8917,
+  "measures": {
+    "affordability": {
+      "b_n": 8847,
+      "b_r2": 0.114117374776,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.149062767658,
+      "c_r2": 0.151666377236,
+      "label": "Affordability (equal avg of two signals)",
+      "level": "dimension"
+    },
+    "availability": {
+      "b_n": 8847,
+      "b_r2": 0.003767544048,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.003806561247,
+      "c_r2": 0.003758456672,
+      "label": "Availability (sole signal)",
+      "level": "dimension"
+    },
+    "composite": {
+      "b_n": 8847,
+      "b_r2": 0.077434815189,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.100130325294,
+      "c_r2": 0.101342822157,
+      "label": "equal-thirds",
+      "level": "composite"
+    },
+    "cost_burden": {
+      "b_n": 8847,
+      "b_r2": 0.041789079413,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.041107529982,
+      "c_r2": 0.041783228823,
+      "label": "Cost Burden (severe+MAX)",
+      "level": "dimension"
+    },
+    "cost_burdened_share": {
+      "b_n": 8847,
+      "b_r2": 0.043300401352,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.042571888481,
+      "c_r2": 0.043304566355,
+      "label": "cost_burdened_share >=30% (Cost Burden)",
+      "level": "signal"
+    },
+    "price_to_income": {
+      "b_n": 8847,
+      "b_r2": 0.148367219706,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.154519808121,
+      "c_r2": 0.156588300001,
+      "label": "price_to_income (Affordability)",
+      "level": "signal"
+    },
+    "rent_to_income": {
+      "b_n": 8847,
+      "b_r2": 0.016514574976,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.075570613836,
+      "c_r2": 0.077162269175,
+      "label": "rent_to_income (Affordability)",
+      "level": "signal"
+    },
+    "rental_vacancy_rate": {
+      "b_n": 8847,
+      "b_r2": 0.003767544048,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.003806560928,
+      "c_r2": 0.003758456349,
+      "label": "rental_vacancy_rate (Availability)",
+      "level": "signal"
+    },
+    "severe_cost_burdened_share": {
+      "b_n": 8847,
+      "b_r2": 0.038516499601,
+      "c_n": 8847,
+      "c_own_n": 8917,
+      "c_own_r2": 0.037933981923,
+      "c_r2": 0.038520032673,
+      "label": "severe_cost_burdened_share >=50% (Cost Burden, v2)",
+      "level": "signal"
+    }
+  },
+  "run_id": "20260924T182315Z-302195",
+  "spearman_composite_b": {
+    "n": 8847,
+    "p": 0.0,
+    "rho": 0.248529720099
+  },
+  "spearman_composite_c": {
+    "n": 8847,
+    "p": 0.0,
+    "rho": 0.274743472164
+  }
+}
